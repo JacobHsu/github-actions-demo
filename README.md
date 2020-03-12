@@ -1,5 +1,9 @@
 # github-actions-demo
 
+[GitHub Actions 入門教程](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)  
+
+[Creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
+
 package.json
 
 ```js
