@@ -1,4 +1,47 @@
+# github-actions-demo
+
+package.json
+
+```js
+"homepage": "https://jacobhsu.github.io/github-actions-demo",
+```
+
+.github/workflows
+
+ action：JamesIves/[github-pages-deploy-action](https://github.com/marketplace/actions/deploy-to-github-pages)  
+
+```yml
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+
+      - name: Build and Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: build # The folder the action should deploy.
+
+```
+
+1. 整個流程在master分支發生push事件時觸發。 
+2. 只有一個job，運行在虛擬機環境ubuntu-latest。
+3. 第一步是獲取源碼，使用的 action 是actions/checkout。
+4. 第二步是構建和部署，使用的 action 是JamesIves/github-pages-deploy-action。
+5. 第二步需要四個環境變量，分別為 GitHub 密鑰、發佈分支、構建成果所在目錄、構建腳本。其中，只有 GitHub 密鑰是秘密變量，需要寫在雙括號裡面，其他三個都可以直接寫在文件裡。
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+GitHub 發現了 workflow 文件以後，就會自動運行。你可以在網站上實時查看運行日誌，日誌默認保存30天。  
+等到 workflow 運行結束，訪問 GitHub Page，會看到構建成果已經發上網了。
+以後，每次修改後推送源碼，GitHub Actions 都會自動運行，將構建產物發佈到網頁。  
 
 ## Available Scripts
 
