@@ -4,6 +4,17 @@
 
 [Creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
 
+## github settings
+
+New personal access token
+[] repo
+- [*] repo:status
+- [] repo_deployment
+- [*] public_repo
+- [] repo:invite
+
+## github-actions-demo settings
+
 Settings/Secrets 用的是 `ACCESS_TOKEN`。如果你不用這個名字，後面腳本裡的變量名也要跟著改。
 
 package.json
