@@ -4,7 +4,10 @@
 
 [Creating a personal access token for the command line](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
 
+
 ## github settings
+
+Settings > Developer settings > Personal access tokens > Generate new token.
 
 New personal access token
 [] repo
@@ -12,6 +15,10 @@ New personal access token
 - [] repo_deployment
 - [*] public_repo
 - [] repo:invite
+
+
+Copy to <YourProject> > settings> Secrets 
+Name `ACCESS_TOKEN` Value `98dcfa124682a3c261e30745fa8e4e77195bfalse`
 
 ## github-actions-demo settings
 
